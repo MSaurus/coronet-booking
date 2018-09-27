@@ -1,24 +1,19 @@
 <template lang="pug">
-  #app
-    Nav
-    Home
-
+  #nav
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Home from './views/Home.vue'
-import Nav from '@/components/Nav.vue'
 export default Vue.extend({
-  components: {
-    Home,
-    Nav
-  }
+    name: 'Nav'
 })
 </script>
 
 <style lang="scss" scoped>
-
+  #nav {
+    height: 100px;
+    background-color: red;
+  }
 </style>
 
 
