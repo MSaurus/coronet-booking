@@ -4,6 +4,7 @@ import router from './router'
 import { MdButton, MdTabs } from 'vue-material/dist/components'
 import 'vue-material/dist/vue-material.min.css'
 import vueCalendar from 'vue2-simple-calendar'
+import "./assets/vue2-simple-calendar.css";
 
 Vue.config.productionTip = false
 
