@@ -1,0 +1,12 @@
+html
+  body
+    form#create-event-form method="post" action="/api/calendars/events/new" style="display: flex; flex-direction: column;"
+      input type="text" placeholder="Title" name="title"
+      textarea form="create-event-form" name="description"
+      input type="datetime-local" name="start-datetime"
+      input type="datetime-local" name="end-datetime"
+      select name="room"
+        option value="stora" Stora Kenferens
+        option value="lilla" Lilla Kenferens
+      input type="text" name="attendees" placeholder="Attendees"
+      input type="submit"
