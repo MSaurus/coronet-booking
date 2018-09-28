@@ -2,12 +2,7 @@
   <div class="md-layout md-alignment-top-center">
     <div class="md-layout-item md-size-70">
       <Tabs></Tabs>
-      <vue-calendar
-        :show-limit="3"
-        @show-all="showAll"
-        @event-clicked="eventClicked"
-        @month-changed="monthChanged"
-      ></vue-calendar>
+      <full-calendar :events="events"></full-calendar>
     </div>
   </div>
 </template>
@@ -16,34 +11,37 @@
 // Ask David why we can't use lang='ts' here
 import Vue from 'vue'
 import Tabs from '@/components/Tabs.vue'
+import { FullCalendar } from 'vue-full-calendar'
+import * as Ajax from '@/ajax/index'
 export default Vue.extend({
   name: "Calendar",
   components: {
-    Tabs
+    Tabs,
+    FullCalendar
   },
   data() {
     return {
-      data: []
+      events: [
+        {
+          title: 'Event 1',
+          start: '2018-09-29T13:00:00',
+          end: '2018-09-29T14:00:00',
+          allDay: false
+        },
+        {
+          title: 'Event 2',
+          start: '2018-09-26T12:00:00',
+          end: '2018-09-26T14:00:00',
+          allDay: false
+        },
+        {
+          title: 'Event 3',
+          start: '2018-09-15T09:30:00',
+          end: '2018-09-15T11:30:00',
+          allDay: false
+        }
+      ]
     };
-  },
-  methods: {
-    showAll(events) {
-      // Do something...
-    },
-    dayClicked(day) {
-      console.log(day);
-      // Do something...
-    },
-    eventClicked(event) {
-      // Do something...
-    },
-    monthChanged(start, end) {
-      // Do something...
-    }
-  },
-  created() {
-    this.$calendar.eventBus.$on("show-all", events => this.showAll(events));
-    this.$calendar.eventBus.$on("day-clicked", day => this.dayClicked(day));
   }
 });
 </script>
