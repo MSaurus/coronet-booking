@@ -3,17 +3,19 @@ class App < Sinatra::Base
   helpers GoogleApiHelper
 
   get "/" do
-    "hej"
+    "HEJ"
   end
 
   get "/api/calendars" do
     content_type :json
-    fetch_calendars
+    headers["Access-Control-Allow-Origin"] = "*"
+    fetch_calendars.to_json
   end
 
   get "/api/calendars/:room" do
     content_type :json
-    fetch_calender_events(get_calendar_id(params["room"].downcase))
+    headers["Access-Control-Allow-Origin"] = "*"
+    fetch_calender_events(get_calendar_id(params["room"].downcase)).to_json
   end
 
   get "/api/calendars/events/new" do
@@ -22,11 +24,13 @@ class App < Sinatra::Base
 
   get "/api/calendars/:calendar_name/events/:event_id/delete" do
     content_type :json
-    delete_event(params)
+    headers["Access-Control-Allow-Origin"] = "*"
+    delete_event(params).to_json
   end
 
   post "/api/calendars/events/new" do
     content_type :json
-    create_event(params)
+    headers["Access-Control-Allow-Origin"] = "*"
+    create_event(params).to_json
   end
 end

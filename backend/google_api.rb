@@ -4,8 +4,8 @@ module GoogleApiHelper
 
   def get_calendar_id(name)
     {
-        stora: "vcv4mjm7fq9ammjud13evhgem4@group.calendar.google.com",
-        lilla: "vcv4mjm7fq9ammjud13evhgem4@group.calendar.google.com"
+        stora: "4vih9vmul1m7ovnp1844kmt8b0@group.calendar.google.com",
+        lilla: "pj2p29fucemcvv93501kp7lmhs@group.calendar.google.com"
     }[name.downcase.to_sym]
   end
 
@@ -52,6 +52,7 @@ module GoogleApiHelper
 
       case params["room"].downcase
       when "stora"
+
         event_config[:location] = 'Coronet: Stora Konferensrummet'
       when "lilla"
         event_config[:location] = 'Coronet: Lilla Konferensrummet'
