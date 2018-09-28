@@ -1,57 +1,54 @@
-<template lang="pug">
-  div(class="md-layout md-alignment-top-center")
-    div(class="md-layout-item md-size-70")
-      Tabs
-      #cal
-        //- vue-calendar(
-        //-   :show-limit="3"
-        //-   :events="events"
-        //-   :disable="disabledDays"
-        //-   :highlight="highlightDays"
-
-        //-   @show-all="showAll"
-        //-   @day-clicked="dayClicked"
-        //-   @event-clicked="eventClicked"
-        //-   @month-changed="monthChanged")
-          
+<template>
+  <div class="md-layout md-alignment-top-center">
+    <div class="md-layout-item md-size-70">
+      <Tabs></Tabs>
+      <full-calendar :events="events"></full-calendar>
+    </div>
+  </div>
 </template>
 
-<script lang="ts">
+<script>
+// Ask David why we can't use lang='ts' here
 import Vue from 'vue'
 import Tabs from '@/components/Tabs.vue'
+import { FullCalendar } from 'vue-full-calendar'
+import * as Ajax from '@/ajax/index'
 export default Vue.extend({
-
-  name: 'Calendar',
+  name: "Calendar",
   components: {
-    Tabs
+    Tabs,
+    FullCalendar
   },
-  methods: {
-    // showAll(events) {
-    //   // Do something...
-    // },
-    // dayClicked(day) {
-    //   // Do something...
-    // },
-    // eventClicked(event) {
-    //   // Do something...
-    // },
-    // monthChanged(start, end) {
-    //   // Do something...
-    // }
+  data() {
+    return {
+      events: [
+        {
+          title: 'Event 1',
+          start: '2018-09-29T13:00:00',
+          end: '2018-09-29T14:00:00',
+          allDay: false
+        },
+        {
+          title: 'Event 2',
+          start: '2018-09-26T12:00:00',
+          end: '2018-09-26T14:00:00',
+          allDay: false
+        },
+        {
+          title: 'Event 3',
+          start: '2018-09-15T09:30:00',
+          end: '2018-09-15T11:30:00',
+          allDay: false
+        }
+      ]
+    };
   }
-  // created() {
-  //   this.$calendar.eventBus.$on('show-all', events => this.showAll(events));
-  //   this.$calendar.eventBus.$on('day-clicked', day =>  this.dayClicked(day));
-  //   this.$calendar.eventBus.$on('event-clicked', event => this.eventClicked(event));
-  //   this.$calendar.eventBus.$on('month-changed', (start, end) => this.monthChanged(start, end));
-  // }
-})
-
-
+});
 </script>
 
-<style lang="scss" scoped>
-  @import '~vue-material/dist/theme/engine';
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang='scss' scoped>
+@import '~vue-material/dist/theme/engine';
 
   .md-layout-item {
     
@@ -67,4 +64,20 @@ export default Vue.extend({
       width: 100%;
     }
   }
+  
+h1,
+h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
 </style>
