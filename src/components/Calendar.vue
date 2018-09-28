@@ -3,16 +3,17 @@
     div(class="md-layout-item md-size-70")
       Tabs
       #cal
-        vue-calendar(
-          :show-limit="3"
-          :events="events"
-          :disable="disabledDays"
-          :highlight="highlightDays"
+        //- vue-calendar(
+        //-   :show-limit="3"
+        //-   :events="events"
+        //-   :disable="disabledDays"
+        //-   :highlight="highlightDays"
 
-          @show-all="showAll"
-          @day-clicked="dayClicked"
-          @event-clicked="eventClicked"
-          @month-changed="monthChanged")
+        //-   @show-all="showAll"
+        //-   @day-clicked="dayClicked"
+        //-   @event-clicked="eventClicked"
+        //-   @month-changed="monthChanged")
+          
 </template>
 
 <script lang="ts">
@@ -25,25 +26,25 @@ export default Vue.extend({
     Tabs
   },
   methods: {
-    showAll(events) {
-      // Do something...
-    },
-    dayClicked(day) {
-      // Do something...
-    },
-    eventClicked(event) {
-      // Do something...
-    },
-    monthChanged(start, end) {
-      // Do something...
-    }
-  },
-  created() {
-    this.$calendar.eventBus.$on('show-all', events => this.showAll(events));
-    this.$calendar.eventBus.$on('day-clicked', day =>  this.dayClicked(day));
-    this.$calendar.eventBus.$on('event-clicked', event => this.eventClicked(event));
-    this.$calendar.eventBus.$on('month-changed', (start, end) => this.monthChanged(start, end));
+    // showAll(events) {
+    //   // Do something...
+    // },
+    // dayClicked(day) {
+    //   // Do something...
+    // },
+    // eventClicked(event) {
+    //   // Do something...
+    // },
+    // monthChanged(start, end) {
+    //   // Do something...
+    // }
   }
+  // created() {
+  //   this.$calendar.eventBus.$on('show-all', events => this.showAll(events));
+  //   this.$calendar.eventBus.$on('day-clicked', day =>  this.dayClicked(day));
+  //   this.$calendar.eventBus.$on('event-clicked', event => this.eventClicked(event));
+  //   this.$calendar.eventBus.$on('month-changed', (start, end) => this.monthChanged(start, end));
+  // }
 })
 
 
@@ -53,7 +54,7 @@ export default Vue.extend({
   @import '~vue-material/dist/theme/engine';
 
   .md-layout-item {
-    border: 3px solid black;
+    
     height: 700px;
     
   }

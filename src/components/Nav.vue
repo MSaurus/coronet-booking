@@ -12,7 +12,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
   #nav {
     height: 100px;
-    background-color: red;
+   
   }
 </style>
 
