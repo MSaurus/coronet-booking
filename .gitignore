@@ -1,4 +1,3 @@
-<<<<<<< oneCalendar
 .DS_Store
 node_modules
 /dist
@@ -20,8 +19,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-=======
 # Created by .ignore support plugin (hsz.mobi)
 
 .idea/
->>>>>>> develop
