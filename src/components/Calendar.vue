@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <div class="md-layout md-gutter md-alignment-top-center">
+  <div class="md-layout md-gutter md-alignment-top-center">
+    <div class="md-layout-item md-layout md-size-100 md-alignment-top-center">
       <div class="md-layout-item md-size-70">
         <Tabs></Tabs>
         <full-calendar :events="events"></full-calendar>
       </div>
-    </div>
-    <div class="md-layout md-gutter md-alignment-top-center">
-      <h1>Hello World</h1>
     </div>
   </div>
 </template>
@@ -16,14 +13,12 @@
 // Ask David why we can't use lang='ts' here
 import Vue from 'vue'
 import Tabs from '@/components/Tabs.vue'
-import TextFields from '@/components/Forms.vue'
 import { FullCalendar } from 'vue-full-calendar'
 import * as Ajax from '@/ajax/index'
 export default Vue.extend({
   name: "Calendar",
   components: {
     Tabs,
-    TextFields,
     FullCalendar
   },
   data() {
@@ -57,20 +52,10 @@ export default Vue.extend({
 <style lang='scss' scoped>
 @import '~vue-material/dist/theme/engine';
 
-  .md-layout-item {
-    
-    height: 700px;
-    
-  }
-  #iframe{
-    width: 100%;
-    height: 100%;
-    
-    iframe{
-      height: calc(100% - 48px);
-      width: 100%;
-    }
-  }
+.md-layout-item {
+  
+  height: 700px;
+}
   
 h1,
 h2 {
