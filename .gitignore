@@ -1,5 +1,13 @@
+#Production ignores
 .DS_Store
 node_modules
+public
+src
+tests
+package-lock.json
+package.json
+tsconfig.js
+
 
 # local env files
 .env.local
