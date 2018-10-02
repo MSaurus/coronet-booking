@@ -9,13 +9,13 @@ class App < Sinatra::Base
   get "/api/calendars" do
     content_type :json
     headers["Access-Control-Allow-Origin"] = "*"
-    fetch_calendars.to_json
+    fetch_calendars
   end
 
   get "/api/calendars/:room" do
     content_type :json
     headers["Access-Control-Allow-Origin"] = "*"
-    fetch_calender_events(get_calendar_id(params["room"].downcase)).to_json
+    fetch_calender_events(get_calendar_id(params["room"].downcase))
   end
 
   get "/api/calendars/events/new" do
@@ -25,12 +25,12 @@ class App < Sinatra::Base
   get "/api/calendars/:calendar_name/events/:event_id/delete" do
     content_type :json
     headers["Access-Control-Allow-Origin"] = "*"
-    delete_event(params).to_json
+    delete_event(params)
   end
 
   post "/api/calendars/events/new" do
     content_type :json
     headers["Access-Control-Allow-Origin"] = "*"
-    create_event(params).to_json
+    create_event(params)
   end
 end
