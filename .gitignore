@@ -6,7 +6,7 @@ src
 tests
 package-lock.json
 package.json
-tsconfig.js
+tsconfig.json
 
 
 # local env files
