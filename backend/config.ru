@@ -1,4 +1,4 @@
-ENV['GOOGLE_APPLICATION_CREDENTIALS'] = './credentials/credentials.json'
+ENV['GOOGLE_APPLICATION_CREDENTIALS'] = 'backend/credentials/credentials.json'
 
 require 'bundler'
 Bundler.require
