@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <div class="md-layout md-gutter md-alignment-top-center">
-      <div class="md-layout-item md-size-70">
-        <Tabs></Tabs>
-        <full-calendar :events="events"></full-calendar>
-      </div>
+  <div class="md-layout md-alignment-top-center">
+    <div v-if="loading === true" id="spinner" md-align="center" class="md-layout-item md-size-70">
+      <h1>Hämtar data från kalendern</h1>
+      <md-progress-spinner :md-diameter="100" :md-stroke="10" md-mode="indeterminate" class="spinner"></md-progress-spinner>
     </div>
-    <div class="md-layout md-gutter md-alignment-top-center">
-      <h1>Hello World</h1>
+    <div v-else class="md-layout-item md-size-70">
+      <Tabs></Tabs>
+      <full-calendar :events="events"></full-calendar>
     </div>
   </div>
 </template>
@@ -18,7 +17,7 @@ import Vue from 'vue'
 import Tabs from '@/components/Tabs.vue'
 import TextFields from '@/components/Forms.vue'
 import { FullCalendar } from 'vue-full-calendar'
-import * as Ajax from '@/ajax/index'
+import axios from 'axios'
 export default Vue.extend({
   name: "Calendar",
   components: {
@@ -28,27 +27,27 @@ export default Vue.extend({
   },
   data() {
     return {
-      events: [
-        {
-          title: 'Event 1',
-          start: '2018-09-29T13:00:00',
-          end: '2018-09-29T14:00:00',
-          allDay: false
-        },
-        {
-          title: 'Event 2',
-          start: '2018-09-26T12:00:00',
-          end: '2018-09-26T14:00:00',
-          allDay: false
-        },
-        {
-          title: 'Event 3',
-          start: '2018-09-15T09:30:00',
-          end: '2018-09-15T11:30:00',
-          allDay: false
-        }
-      ]
-    };
+      loading: true,
+      events: []
+    }
+  },
+
+  mounted(){
+    setTimeout(() => {
+      axios.get('https://coronet-booking.herokuapp.com/api/calendars/stora')
+      .then(response =>  {return response['data']})
+      .then(data => {
+        let items = data.response.items
+        items.forEach(item => {
+          this.events.push({
+            title: item.summary,
+            start: item.start.date_time,
+            end: item.end.date_time
+          })
+        })
+        this.loading = false
+      })
+    }, 2000)
   }
 });
 </script>
@@ -57,20 +56,18 @@ export default Vue.extend({
 <style lang='scss' scoped>
 @import '~vue-material/dist/theme/engine';
 
-  .md-layout-item {
-    
-    height: 700px;
-    
+.md-layout-item {
+  
+  height: 700px;
+  
+}
+
+#spinner {
+  text-align: center;
+  h1 {
+    margin-bottom: 75px;
   }
-  #iframe{
-    width: 100%;
-    height: 100%;
-    
-    iframe{
-      height: calc(100% - 48px);
-      width: 100%;
-    }
-  }
+}
   
 h1,
 h2 {
