@@ -1,5 +1,7 @@
 <template lang="pug">
-  Calendar
+  div
+    Calendar
+    Form
 </template>
 
 <script lang="ts">
