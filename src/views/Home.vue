@@ -14,6 +14,12 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 
+    #spinner {
+        text-align: center;
+        h1 {
+            margin-bottom: 75px;
+        }
+    }
 
 
 </style>
