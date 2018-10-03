@@ -33,7 +33,7 @@ export default Vue.extend({
   mounted(){
     setTimeout(() => {
       axios.get('https://coronet-booking.herokuapp.com/api/calendars/stora')
-      .then(response =>  JSON.parse(response['data']))
+      .then(response =>  {return response['data']})
       .then(data => {
         let items = data.response.items
         items.forEach(item => {
