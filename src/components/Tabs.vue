@@ -17,11 +17,10 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 
-  .md-tabs{
-    height: 100%;
-    width: 100%;
+.md-tabs{
+  height: 100%;
+  width: 100%;
   }
-  
 </style>
 
 
