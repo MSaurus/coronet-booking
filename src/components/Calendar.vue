@@ -1,12 +1,10 @@
 <template>
-  <div class="md-layout md-alignment-top-center">
-    <div v-if="loading === true" id="spinner" md-align="center" class="md-layout-item md-size-70">
-      <h1>Hämtar data från kalendern</h1>
-      <md-progress-spinner :md-diameter="100" :md-stroke="10" md-mode="indeterminate" class="spinner"></md-progress-spinner>
-    </div>
-    <div v-else class="md-layout-item md-size-70">
-      <Tabs></Tabs>
-      <full-calendar :events="events"></full-calendar>
+  <div class="md-layout md-gutter md-alignment-top-center">
+    <div class="md-layout-item md-layout md-size-100 md-alignment-top-center">
+      <div class="md-layout-item md-size-70">
+        <Tabs></Tabs>
+        <full-calendar :events="events"></full-calendar>
+      </div>
     </div>
   </div>
 </template>
@@ -15,14 +13,12 @@
 // Ask David why we can't use lang='ts' here
 import Vue from 'vue'
 import Tabs from '@/components/Tabs.vue'
-import TextFields from '@/components/Forms.vue'
 import { FullCalendar } from 'vue-full-calendar'
 import axios from 'axios'
 export default Vue.extend({
   name: "Calendar",
   components: {
     Tabs,
-    TextFields,
     FullCalendar
   },
   data() {
@@ -59,14 +55,6 @@ export default Vue.extend({
 .md-layout-item {
   
   height: 700px;
-  
-}
-
-#spinner {
-  text-align: center;
-  h1 {
-    margin-bottom: 75px;
-  }
 }
   
 h1,
