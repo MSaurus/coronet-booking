@@ -1,11 +1,16 @@
 <template>
-    <p>Boka här </p>
+    <book-form></book-form>
 </template>
 
 <script>
-    export default {
-        name: "Book"
-    }
+    import Vue from 'vue'
+    import BookForm from '@/components/Form.vue'
+    export default Vue.extend({
+        name: "Book",
+        components: {
+            BookForm
+        }
+    })
 </script>
 
 <style scoped>
