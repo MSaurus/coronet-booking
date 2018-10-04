@@ -8,10 +8,16 @@
             md-field
                 label Description
                 md-textarea(v-model='description')
-            md-datepicker(v-model="startDate" md-immediately)
-                label Select start date
-            md-datepicker(v-model="endDate" md-immediately)
-                label Select end date
+            table
+              tr
+                td
+                  md-field
+                    datetime(v-model="startDate" type="datetime")
+                td
+                  h2 -
+                td
+                  md-field
+                    datetime(v-model="endDate" type="datetime")
             md-field
                 label(for="room") Which konference room?
                 md-select(v-model="room" name="room" id="room")
@@ -28,10 +34,17 @@
 
 <script lang="ts">
     //https://github.com/mariomka/vue-datetime
+
     import Vue from 'vue'
+    import { Datetime } from 'vue-datetime';
+
 
     export default Vue.extend({
         name: 'BookForm',
+        components: {
+          datetime: Datetime
+        },
+
         data: () => ({
             title: null,
             description: null,
@@ -43,7 +56,16 @@
     })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.vdatetime {
+  display: flex
+} 
+.vdatetime-input {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2em;
+  text-align: center;
+}
 </style>
 
 

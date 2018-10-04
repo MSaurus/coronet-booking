@@ -5,6 +5,8 @@ import { MdButton, MdTabs, MdProgress, MdField, MdMenu, MdList, MdDatepicker } f
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 import 'fullcalendar/dist/fullcalendar.css'
+import Datetime from 'vue-datetime'
+import 'vue-datetime/dist/vue-datetime.css'
 
 Vue.config.productionTip = false
 
@@ -15,6 +17,7 @@ Vue.use(MdField)
 Vue.use(MdMenu)
 Vue.use(MdList)
 Vue.use(MdDatepicker)
+Vue.use(Datetime)
 
 new Vue({
   router,
