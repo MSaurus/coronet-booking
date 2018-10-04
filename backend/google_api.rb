@@ -27,11 +27,11 @@ module GoogleApiHelper
           summary: params["title"],
           description: params["description"],
           start: {
-              date_time: params["start-datetime"] + ":00",
+              date_time: params["start-datetime"],
               time_zone: 'Europe/Stockholm',
           },
           end: {
-              date_time: params["end-datetime"] + ":00",
+              date_time: params["end-datetime"],
               time_zone: 'Europe/Stockholm',
           },
           attendees: [],
