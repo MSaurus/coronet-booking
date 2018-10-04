@@ -18,19 +18,19 @@ export default new Router({
     },
     {
         path: '/stora',
-        name: '',
+        name: 'stora',
         component: StoraCalendar
     },
-      {
-          path: '/lilla',
-          name: '',
-          component: LillaCalendar
-      },
-      {
-          path: '/boka',
-          name: '',
-          component: Book
-      }
+    {
+      path: '/lilla',
+      name: 'lila',
+      component: LillaCalendar
+    },
+    {
+      path: '/boka',
+      name: 'boka',
+      component: Book
+    }
 
 
       // {
