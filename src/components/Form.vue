@@ -14,14 +14,14 @@
                 td
                   p.field-title Start date and time:
                   md-field
-                    datetime(v-model="startDate" type="datetime" style="width: 100%")
+                    datetime(v-model="startDate" type="datetime" style="width: 100%" auto value-zone="Europe/Stockholm" zone="Europe/Stockholm")
                 td
                   .middle-dash
                     h2 -
                 td
                   p.field-title End date and time:
                   md-field
-                    datetime(v-model="endDate" type="datetime" style="width: 100%")
+                    datetime(v-model="endDate" type="datetime" style="width: 100%" auto value-zone="Europe/Stockholm" zone="Europe/Stockholm")
             md-field
                 label(for="room") Which konference room?
                 md-select(v-model="room" name="room" id="room")
@@ -51,7 +51,7 @@
 
         data: () => {
             return {
-                title: "Hej",
+                title: "",
                 description: "",
                 startDate: "",
                 endDate: "",
@@ -62,17 +62,22 @@
 
         methods: {
             submit () {
-                console.log(JSON.stringify(this.attendees))
-                /*setTimeout(() => {
-                    data = {title: this.title}
-                    axios.post("https://coronet-booking.herokuapp.com/api/calendars/events/new")
+                setTimeout(() => {
+                    let data = {title: this.title,
+                        attendees: JSON.stringify(this.attendees),
+                        description: this.description,
+                        "start-datetime": this.startDate,
+                        "end-datetime": this.endDate,
+                        room: this.room
+                    }
+                    axios.post("https://coronet-booking.herokuapp.com/api/calendars/events/new", data)
                         .then(response =>  {return response['data']})
                         .then(data => {
                             if (data.status === true) {
                                 this.$router.push({name: "stora"})
                             }
                         })
-                }, 1000)*/
+                }, 1000)
             }
         }
     })
