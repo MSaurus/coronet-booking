@@ -1,10 +1,8 @@
 class App < Sinatra::Base
 
-  helpers GoogleApiHelper
+  set :public_folder, 'dist'
 
-  get "/" do
-    "HEJ"
-  end
+  helpers GoogleApiHelper
 
   get "/api/calendars" do
     content_type :json
@@ -32,5 +30,9 @@ class App < Sinatra::Base
     content_type :json
     headers["Access-Control-Allow-Origin"] = "*"
     create_event(params)
+  end
+
+  get "*" do
+    redirect "/index.html"
   end
 end

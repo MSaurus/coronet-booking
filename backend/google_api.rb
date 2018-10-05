@@ -45,8 +45,8 @@ module GoogleApiHelper
       }
 
       unless params["attendees"].nil? && params["attendees"].empty?
-        params["attendees"].split(",").each do |attendee|
-          event_config[:attendees] << {email: attendee.strip}
+        ::JSON.parse(params["attendees"]).each do |attendee|
+          event_config[:attendees] << {email: attendee.to_s}
         end
       end
 
