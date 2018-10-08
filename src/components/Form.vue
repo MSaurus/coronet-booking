@@ -30,7 +30,7 @@
             md-chips(v-model="attendees" md-placeholder="Add Attendees..")
                 .md-helper-text Press enter to add attendee.
             .center
-                md-button.md-dense.md-raised.md-primary(v-on:click="submit" con) Book
+                md-button.md-dense.md-raised.md-primary(v-on:click="submit") Book
 </template>
 
 
@@ -62,40 +62,34 @@
 
         methods: {
             submit () {
-                setTimeout(() => {
-                    let data = {title: this.title,
-                        attendees: JSON.stringify(this.attendees),
-                        description: this.description,
-                        "start-datetime": this.startDate,
-                        "end-datetime": this.endDate,
-                        room: this.room
-                    };
+                let data = {title: this.title,
+                    attendees: JSON.stringify(this.attendees),
+                    description: this.description,
+                    "start-datetime": this.startDate,
+                    "end-datetime": this.endDate,
+                    room: this.room
+                };
 
-                    let form_data = new FormData();
-                    for ( let key in data ) {
-                        form_data.append(key, data[key]);
-                    }
+                // let form_data = new FormData();
+                // for ( let key in data ) {
+                //     form_data.append(key, data[key]);
+                // }
 
-                    let request = new XMLHttpRequest();
-                    request.open("POST", "http://localhost:9292/api/calendars/events/new", true);
-                    request.send(form_data);
+                // let request = new XMLHttpRequest();
+                // request.open("POST", "http://localhost:9292/api/calendars/events/new", true);
+                // request.send(form_data);
 
-                    request.onreadystatechange = () => {
-                        if(request.readyState == XMLHttpRequest.DONE) {
-                            console.log(request.responseText);
-                            this.$router.push({name: this.room})
-                        }
-                    }
-                    /*
-                    axios.post(, data)
-                        .then(response =>  {return response['data']})
-                        .then(data => {
-                            console.log(data)
-                            if (data.status === true) {
-                                this.$router.push({name: "stora"})
-                            }
-                        })*/
-                }, 1000)
+                // request.onreadystatechange = () => {
+                //     if(request.readyState == XMLHttpRequest.DONE) {
+                //         console.log(request.responseText);
+                //         this.$router.push({name: this.room})
+                //     }
+                // }
+                
+                axios.post('https://coronet-booking.herokuapp.com/api/calendars/events/new', data, {
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
+                })
+                    .then(response => {console.log(response)})
             }
         }
     })
