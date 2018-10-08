@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import StoraCalendar from './views/StoraCalendar.vue'
 import LillaCalendar from './views/LillaCalendar.vue'
 import Book from './views/Book.vue'
+import Login from './views/Login.vue'
 
 Vue.use(Router)
 
@@ -11,11 +12,6 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
     {
         path: '/stora',
         name: '',
@@ -30,6 +26,11 @@ export default new Router({
           path: '/boka',
           name: '',
           component: Book
+      },
+      {
+        path: '/login',
+        name: '',
+        component: Login
       }
 
 

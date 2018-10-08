@@ -22,11 +22,12 @@
                 md-input(v-model='attendees')
                 span.md-helper-text Seperate attendees with a coma.
             <md-button class="md-dense md-raised md-primary">Book</md-button>
+        a(@click="signOut") Sign Out
 </template>
 
 
 
-<script lang="ts">
+<script>
     //https://github.com/mariomka/vue-datetime
     import Vue from 'vue'
 
@@ -39,7 +40,15 @@
             endDate: null,
             room: null,
             attendees: null
-        })
+        }),
+        methods: {
+            signOut: () => {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                console.log('User signed out.');
+                });
+            }
+        }
     })
 </script>
 

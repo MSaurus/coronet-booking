@@ -1,5 +1,5 @@
-<template>
-    <book-form></book-form>
+<template lang="pug">
+    book-form
 </template>
 
 <script>
@@ -9,6 +9,17 @@
         name: "Book",
         components: {
             BookForm
+        },
+        mounted: () => {
+            let auth2 = gapi.auth2.getAuthInstance()
+            if(auth2.isSignedIn.get())
+            {
+                console.log('logged in')
+            }
+            else 
+            {
+                window.location.replace('/login')
+            }
         }
     })
 </script>
