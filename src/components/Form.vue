@@ -69,14 +69,32 @@
                         "start-datetime": this.startDate,
                         "end-datetime": this.endDate,
                         room: this.room
+                    };
+
+                    let form_data = new FormData();
+                    for ( let key in data ) {
+                        form_data.append(key, data[key]);
                     }
-                    axios.post("https://coronet-booking.herokuapp.com/api/calendars/events/new", data)
+
+                    let request = new XMLHttpRequest();
+                    request.open("POST", "http://localhost:9292/api/calendars/events/new", true);
+                    request.send(form_data);
+
+                    request.onreadystatechange = () => {
+                        if(request.readyState == XMLHttpRequest.DONE) {
+                            console.log(request.responseText);
+                            this.$router.push({name: this.room})
+                        }
+                    }
+                    /*
+                    axios.post(, data)
                         .then(response =>  {return response['data']})
                         .then(data => {
+                            console.log(data)
                             if (data.status === true) {
                                 this.$router.push({name: "stora"})
                             }
-                        })
+                        })*/
                 }, 1000)
             }
         }
