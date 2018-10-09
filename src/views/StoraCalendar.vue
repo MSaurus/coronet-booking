@@ -1,5 +1,5 @@
-<template>
-    <calendar url="https://coronet-booking.herokuapp.com/api/calendars/stora"></calendar>
+<template lang='pug'>
+    calendar(url="https://coronet-booking.herokuapp.com/api/calendars/stora")
 </template>
 
 <script>

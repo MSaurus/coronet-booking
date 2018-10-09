@@ -1,16 +1,19 @@
 <template lang="pug">
   #app
-    Nav
-    router-view
+    component(:is="layout")
 
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
-import Nav from '@/components/Nav.vue'
+
+const default_layout = "default";
+
 export default Vue.extend({
-  components: {
-    Nav
+  computed: {
+    layout() {
+      return (this.$route.meta.layout || default_layout) + '-layout';
+    }
   }
 })
 </script>
