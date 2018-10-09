@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import StoraCalendar from './views/StoraCalendar.vue'
 import LillaCalendar from './views/LillaCalendar.vue'
 import Book from './views/Book.vue'
+import TabletStora from './views/TabletStora.vue'
+import TabletLilla from './views/TabletLilla.vue'
 
 Vue.use(Router)
 
@@ -23,14 +25,28 @@ export default new Router({
     },
     {
       path: '/lilla',
-      name: 'lila',
+      name: 'lilla',
       component: LillaCalendar
     },
     {
       path: '/boka',
       name: 'boka',
       component: Book
+    },
+    {
+      path: '/tablet/stora',
+      name: 'tablet-stora',
+      meta: { layout: 'no-tabs'},
+      component: TabletStora
+    },
+    {
+      path: '/tablet/lilla',
+      name: 'tablet-lilla',
+      meta: {layout: 'no-tabs'},
+      component: TabletLilla
     }
+
+    
 
 
       // {
