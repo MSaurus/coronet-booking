@@ -1,14 +1,16 @@
-<template>
-    <book-form></book-form>
+<template lang='pug'>
+    book-form
 </template>
 
 <script>
     import Vue from 'vue'
     import BookForm from '@/components/Form.vue'
+    import Nav from '@/components/Nav.vue'
     export default Vue.extend({
         name: "Book",
         components: {
-            BookForm
+            BookForm,
+            Nav
         }
     })
 </script>
