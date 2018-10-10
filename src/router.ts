@@ -6,6 +6,7 @@ import LillaCalendar from './views/LillaCalendar.vue'
 import Book from './views/Book.vue'
 import TabletStora from './views/TabletStora.vue'
 import TabletLilla from './views/TabletLilla.vue'
+import Smocket from './views/Socket.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       name: 'tablet-lilla',
       meta: {layout: 'no-tabs'},
       component: TabletLilla
+    },
+    {
+      path: '/socket',
+      name: 'socket',
+      component: Smocket
     }
 
     
