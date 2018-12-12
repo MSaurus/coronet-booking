@@ -1,0 +1,144 @@
+{
+  "status": true,
+  "response": {
+    "access_role": "owner",
+    "default_reminders": [],
+    "etag": "\"p324bdtdcpbrdq0g\"",
+    "items": [
+      {
+        "description": "Hej",
+        "end": {
+          "date_time": "2018-10-06T12:59:00+02:00",
+          "time_zone": "Europe/Stockholm"
+        },
+        "location": "Coronet: Stora Konferensrummet",
+        "reminders": {
+          "overrides": [
+            {
+              "reminder_method": "email",
+              "minutes": 1440
+            },
+            {
+              "reminder_method": "popup",
+              "minutes": 10
+            }
+          ],
+          "use_default": false
+        },
+        "start": {
+          "date_time": "2018-10-06T12:00:00+02:00",
+          "time_zone": "Europe/Stockholm"
+        },
+        "summary": "Title",
+        "created": "2018-10-05T10:49:07+00:00",
+        "creator": {
+          "email": "coronet-booking-account@booking-system-217611.iam.gserviceaccount.com"
+        },
+        "etag": "\"3077473094998000\"",
+        "html_link": "https://www.google.com/calendar/event?eid=NWxka2JsaGhoOW1pZWNjZ2MyN3FhdWFraWMgNHZpaDl2bXVsMW03b3ZucDE4NDRrbXQ4YjBAZw",
+        "i_cal_uid": "5ldkblhhh9mieccgc27qauakic@google.com",
+        "id": "5ldkblhhh9mieccgc27qauakic",
+        "kind": "calendar#event",
+        "organizer": {
+          "display_name": "Coronet Booking - Stora Konferensrummet",
+          "email": "4vih9vmul1m7ovnp1844kmt8b0@group.calendar.google.com",
+          "self": true
+        },
+        "sequence": 0,
+        "status": "confirmed",
+        "updated": "2018-10-05T10:49:07+00:00"
+      },
+      {
+        "description": "hej",
+        "end": {
+          "date_time": "2018-10-08T11:00:00+02:00",
+          "time_zone": "Europe/Stockholm"
+        },
+        "location": "Coronet: Stora Konferensrummet",
+        "reminders": {
+          "overrides": [
+            {
+              "reminder_method": "email",
+              "minutes": 1440
+            },
+            {
+              "reminder_method": "popup",
+              "minutes": 10
+            }
+          ],
+          "use_default": false
+        },
+        "start": {
+          "date_time": "2018-10-08T10:00:00+02:00",
+          "time_zone": "Europe/Stockholm"
+        },
+        "summary": "Creator test",
+        "created": "2018-10-08T09:51:21+00:00",
+        "creator": {
+          "email": "coronet-booking-account@booking-system-217611.iam.gserviceaccount.com"
+        },
+        "etag": "\"3077984562519000\"",
+        "html_link": "https://www.google.com/calendar/event?eid=YTdkNDQ1b3J1ZnFqaHQwbG1wc2EzcmFtdnMgNHZpaDl2bXVsMW03b3ZucDE4NDRrbXQ4YjBAZw",
+        "i_cal_uid": "a7d445orufqjht0lmpsa3ramvs@google.com",
+        "id": "a7d445orufqjht0lmpsa3ramvs",
+        "kind": "calendar#event",
+        "organizer": {
+          "display_name": "Coronet Booking - Stora Konferensrummet",
+          "email": "4vih9vmul1m7ovnp1844kmt8b0@group.calendar.google.com",
+          "self": true
+        },
+        "sequence": 0,
+        "status": "confirmed",
+        "updated": "2018-10-08T09:51:21+00:00"
+      },
+      {
+        "description": "hej",
+        "end": {
+          "date_time": "2018-10-08T11:00:00+02:00",
+          "time_zone": "Europe/Stockholm"
+        },
+        "location": "Coronet: Stora Konferensrummet",
+        "reminders": {
+          "overrides": [
+            {
+              "reminder_method": "email",
+              "minutes": 1440
+            },
+            {
+              "reminder_method": "popup",
+              "minutes": 10
+            }
+          ],
+          "use_default": false
+        },
+        "start": {
+          "date_time": "2018-10-08T10:00:00+02:00",
+          "time_zone": "Europe/Stockholm"
+        },
+        "summary": "Creator test",
+        "created": "2018-10-08T09:57:19+00:00",
+        "creator": {
+          "email": "coronet-booking-account@booking-system-217611.iam.gserviceaccount.com"
+        },
+        "etag": "\"3077985278901000\"",
+        "html_link": "https://www.google.com/calendar/event?eid=djZmOW9maGdjMmoxa2ptdnA0cTAzMGhlczggNHZpaDl2bXVsMW03b3ZucDE4NDRrbXQ4YjBAZw",
+        "i_cal_uid": "v6f9ofhgc2j1kjmvp4q030hes8@google.com",
+        "id": "v6f9ofhgc2j1kjmvp4q030hes8",
+        "kind": "calendar#event",
+        "organizer": {
+          "display_name": "Coronet Booking - Stora Konferensrummet",
+          "email": "4vih9vmul1m7ovnp1844kmt8b0@group.calendar.google.com",
+          "self": true
+        },
+        "sequence": 0,
+        "status": "confirmed",
+        "updated": "2018-10-08T09:57:19+00:00"
+      }
+    ],
+    "kind": "calendar#events",
+    "next_sync_token": "CIi29azK9t0CEIi29azK9t0CGAU=",
+    "summary": "Coronet Booking - Stora Konferensrummet",
+    "time_zone": "Europe/Stockholm",
+    "updated": "2018-10-08T09:57:19+00:00"
+  }
+}

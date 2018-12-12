@@ -42,11 +42,22 @@ module GoogleApiHelper
                   {reminder_method: 'popup', minutes: 10},
               ],
           },
+          extended_properties: {
+              private: {
+                  user_id: "gej"
+              }
+          }
       }
 
-      unless params["attendees"].nil? && params["attendees"].empty?
-        ::JSON.parse(params["attendees"]).each do |attendee|
-          event_config[:attendees] << {email: attendee.to_s}
+      unless params["attendees"].nil? || params["attendees"].empty? || params["attendees"] == ""
+        if !params["attendees"].start_with?("{")
+          params["attendees"].split(",").each do |attendee|
+            event_config[:attendees] << {email: attendee.strip}
+          end
+        else
+          ::JSON.parse(params["attendees"]).each do |attendee|
+            event_config[:attendees] << {email: attendee.to_s}
+          end
         end
       end
 
@@ -83,6 +94,7 @@ module GoogleApiHelper
         {status: true, response: resp_parsed}.to_json
       end
     rescue => e
+      puts e.backtrace
       {status: false, error_msg: e.message}.to_json
     end
   end
